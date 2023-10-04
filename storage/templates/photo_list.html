@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <title>Image Cloud</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="inner-header">
+                <div class="logo-container">
+                    <h1>IMAGE<span>CLOUD</span></h1>
+                </div>
+                <ul class="navigation">
+                    <a href="https://imagescloud-production.up.railway.app/cloud/home/"><li>Home</li></a>
+                    <a href="https://imagescloud-production.up.railway.app/cloud/photolist/"><li>Photo
+                            List</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="main-view">
+            {% block content %}
+            <div class="grid-container">
+                {% for img in photos %}
+                <div class="grid-item">
+
+                    <p>{{img.photo_name}}</p>
+                    <img src="../../media/{{img.photo_file}}" alt="{{img.photo_name}}" width="500vw">
+                    <div class="action-buttons">
+                        <a href="{% url 'download_file' photo_id=img.id %}"><button class="download-button"  type="submit" >Download</button></a>
+                        <a href="{% url 'delete_photo' photo_id=img.id %}"><button class="delete-button"  type="submit">Delete</button></a>
+
+                    </div>
+                </div>
+                
+                {% endfor %}
+            </div>
+            {% endblock %}
+            
+        </div>
+    </body>
+</html>

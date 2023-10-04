@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const photoInput = document.getElementById('photo');
+                const imageField = document.getElementById('imageField');
+            
+                photoInput.addEventListener('change', function () {
+                    if (photoInput.files && photoInput.files[0]) {
+                        imageField.classList.add('filled');
+                    } else {
+                        imageField.classList.remove('filled');
+                    }
+                });
+            });
+        </script>
+        <title>Image Cloud</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="inner-header">
+                <div class="logo-container">
+                    <h1>IMAGE<span>CLOUD</span></h1>
+                </div>
+                <ul class="navigation">
+                    <a href="https://imagescloud-production.up.railway.app/cloud/home/"><li>Home</li></a>
+                    <a href="https://imagescloud-production.up.railway.app/cloud/photolist/"><li>Photo List</li></a>
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <div class="upload">
+                <div class="card-upload">
+                    <h1>Storage Files</h1>
+                    <label for="user"></label>
+                    <form action="{% url 'home' %}" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+                        <div class="textfield">
+                            <input type="text" placeholder="Name" name="name" required>
+                        </div>
+                        <div class="imagefield" id="imageField">
+                            <label for="photo">
+                            <img src="{% static './images/upload_photo.svg' %}" alt="">
+                            </label>
+                            <input type="file" placeholder="Photo" name="photo" id="photo" accept="image/png, image/jpg, image/gif, image/jpeg" required>
+                        </div>
+                        <button class="btn-upload" type="submit">Upload</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

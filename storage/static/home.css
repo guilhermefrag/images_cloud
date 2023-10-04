@@ -1,0 +1,250 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+body {
+    margin: 0;
+    background-color: #201b2c;
+    color: #20d179d4;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #2f2841;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.inner-header {
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    background-color: #2f2841;
+}
+
+.logo-container {
+    height: 100%;
+    display: table;
+    float: left;
+}
+
+.logo-container h1 {
+    color: #00ff8052;
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.logo-container span {
+    color: #00ff88;
+    font-weight: 800;
+}
+
+.navigation {
+    height: 100%;
+    float: right;
+}
+
+.navigation a {
+    height: 100%;
+    display: table;
+    float: left;
+    padding: 0 20px;
+}
+
+
+.navigation a li {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    color: #00ff88;
+    font-size: 26px;
+}
+
+.navigation a li:hover {
+    color: #2b7452;
+}
+
+.upload {
+    margin-top: -100px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-upload>h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.textfield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.imagefield {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.textfield>input {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    color: #f0ffffde;
+    background: #514869;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    box-sizing: border-box;
+}
+
+.imagefield>input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.imagefield>label {
+    font-size: 1.25em;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    text-align: center;
+    color: #2b134b;
+    background-color: #00ff8052;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.imagefield:hover>label,
+.imagefield:focus>label {
+    background-color: #00ff88;
+}
+
+.imagefield.filled {
+    font-size: 1.25em;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    outline: none;
+    text-align: center;
+    color: #2b134b;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #00ff88;
+}
+
+
+.btn-upload {
+    width: 100%;
+    padding: 16px 0px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-sizing: border-box;
+}
+
+.btn-upload:hover {
+    box-shadow: 0px 10px 40px -12px #00ff88;
+}
+
+.grid-container {
+    padding: 2vw 1vw 2vw 1vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+.grid-item {
+    background-color: #2f2841;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.grid-item > img {
+    width: 70%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.action-buttons {
+    width: 100%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    bottom: 0;
+}
+
+.download-button, .delete-button{
+    width: 100%;
+    padding: 16px 0px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-sizing: border-box;
+}
+
+.download-button:hover, .delete-button:hover {
+    box-shadow: 0px 10px 40px -12px #00ff88;
+}
